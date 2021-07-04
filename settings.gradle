@@ -1,0 +1,3 @@
+rootProject.name = "SampleRakuma"
+include ':app'
+include ':network'
