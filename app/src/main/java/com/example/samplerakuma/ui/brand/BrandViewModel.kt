@@ -12,6 +12,8 @@ import com.example.samplerakuma.network.response.Brands
 import com.example.samplerakuma.repository.BrandRepository
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import java.io.PrintWriter
+import java.io.StringWriter
 
 class BrandViewModel(
     application: Application,
@@ -38,7 +40,10 @@ class BrandViewModel(
                 brandsAdapterItems.clear()
                 brandsAdapterItems.addAll(brands)
             }, {
-                Log.e("error", it.message!!)
+                val sw = StringWriter()
+                val pw = PrintWriter(sw)
+                it.printStackTrace(pw)
+                Log.e("error", sw.toString())
             })
         )
     }
