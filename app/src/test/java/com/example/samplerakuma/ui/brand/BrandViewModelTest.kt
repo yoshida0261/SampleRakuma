@@ -30,11 +30,11 @@ class BrandViewModelTest {
     @Mock
     private lateinit var brandRepository: BrandRepository
 
-    val scheduler = TestScheduler()
+    private val scheduler = TestScheduler()
 
-    val data = listOf(Brands("uso data"))
+    private val data = listOf(Brands("uso data"))
 
-    var viewModel: BrandViewModel? = null
+    private lateinit var viewModel: BrandViewModel
 
     @Before
     fun setup() {
